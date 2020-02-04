@@ -16,6 +16,10 @@ setup(
     license='BSD',
     packages=find_packages(),
     package_data={'': ['*.avro', '*.yml', '*.html']},
+    entry_points={
+        'intake.drivers':
+            ['avro_sequence = intake_avro.sources:AvroSequenceSource',
+             'avro_table = intake_avro.sources:AvroTableSource']},
     include_package_data=True,
     install_requires=requires,
     long_description=open('README.md').read(),
